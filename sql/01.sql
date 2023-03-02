@@ -6,3 +6,11 @@
  * HINT:
  * The postgresqltutorial.com website has a solution for this problem.
  */
+
+SELECT film.film_id, film.title
+FROM film
+WHERE film.rental_rate > (
+	SELECT AVG (film.rental_rate)
+	FROM film
+)
+ORDER BY film.title;

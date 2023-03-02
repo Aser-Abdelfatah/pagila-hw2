@@ -5,3 +5,11 @@
  * HINT:
  * This can be done by either using a LEFT JOIN or by using the NOT IN clause and a subquery.
  */
+
+SELECT TITLE
+FROM FILM
+WHERE FILM_ID NOT IN (
+SELECT film_id
+FROM inventory
+)
+ORDER BY TITLE;
